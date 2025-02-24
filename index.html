@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sérénity & Home - Agence Immobilière</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background 0.5s;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 100px 50px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+        }
+        .annonces-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .annonce {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        .annonce img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sérénity & Home</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#annonces">Nos biens</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="accueil">
+        <h2>Bienvenue chez Sérénity & Home</h2>
+        <p>Trouvez votre futur chez-vous avec notre agence immobilière.</p>
+        <form>
+            <input type="text" placeholder="Ville, Code Postal...">
+            <input type="number" placeholder="Prix max">
+            <input type="submit" value="Rechercher">
+        </form>
+    </section>
+    
+    <section id="annonces">
+        <h2>Nos annonces</h2>
+        <div class="annonces-container">
+            <div class="annonce">
+                <img src="maison1.jpg" alt="Maison à vendre">
+                <h3>Maison 4 pièces - Paris</h3>
+                <p>Prix : 450 000€</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="annonce">
+                <img src="maison2.jpg" alt="Appartement à vendre">
+                <h3>Appartement 3 pièces - Lyon</h3>
+                <p>Prix : 320 000€</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="annonce">
+                <img src="maison3.jpg" alt="Villa à vendre">
+                <h3>Villa 5 pièces - Nice</h3>
+                <p>Prix : 750 000€</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="annonce">
+                <img src="maison4.jpg" alt="Studio à vendre">
+                <h3>Studio - Bordeaux</h3>
+                <p>Prix : 180 000€</p>
+                <a href="#">Voir plus</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Achat & Vente</li>
+            <li>Location</li>
+            <li>Estimation immobilière</li>
+            <li>Gestion locative</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <form>
+            <input type="text" placeholder="Nom">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Votre message"></textarea>
+            <input type="submit" value="Envoyer">
+        </form>
+    </section>
+    
+    <section id="about">
+        <h2>À propos de nous</h2>
+        <p>Sérénity & Home est une agence immobilière dédiée à vous accompagner dans tous vos projets immobiliers.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Sérénity & Home - Tous droits réservés.</p>
+        <a href="honoraires.html">Honoraires</a>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $(window).on("scroll", function() {
+                $("section").each(function() {
+                    let top = $(this).offset().top - window.innerHeight / 1.3;
+                    if ($(window).scrollTop() > top) {
+                        $(this).addClass("visible");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
